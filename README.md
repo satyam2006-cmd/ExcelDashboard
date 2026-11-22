@@ -2,80 +2,53 @@
 
 <div align="center">
 
-<a href="https://1drv.ms/x/c/1cb72b16f52dc456/IQTjHFDnwslAQ4_fmDIWelybAagU6xWA45i9Tw6dXyC6ep4?em=2&amp;wdAllowInteractivity=False&amp;ActiveCell='Dashboard'!A1&amp;wdHideGridlines=True&amp;wdHideHeaders=True&amp;wdInConfigurator=True" target="_blank">
-  <img src="webpreview.png" alt="View Interactive Dashboard" width="800">
-</a>
+[![View Interactive Dashboard](webpreview.png)](https://1drv.ms/x/c/1cb72b16f52dc456/IQTjHFDnwslAQ4_fmDIWelybAagU6xWA45i9Tw6dXyC6ep4?em=2&wdAllowInteractivity=True&ActiveCell='Dashboard'!A1&wdHideGridlines=True&wdHideHeaders=True&wdInConfigurator=True)
 
 </div>
 
-An ESP8266-based IoT monitoring system that collects temperature, humidity, ambient light, and device states, stores the readings in Excel, and presents a real-time analytics dashboard.
+ESP8266 IoT monitoring project for collecting sensor readings and viewing them in an Excel analytics dashboard.
 
-## Features
+## Dashboard Features
 
-- Live ESP8266 sensor data collection
-- Timestamped temperature and humidity readings
-- Ambient light (`LDR`) monitoring
-- Light and fan status tracking
-- Automatic Excel table expansion
-- KPI summary for the latest readings
-- Environmental sensor trend charts
-- Raw data, analytics, and dashboard views in one workbook
+- Temperature and humidity monitoring
+- Ambient light (`LDR`) readings
+- Light and fan status
+- Timestamped data collection
+- KPIs and sensor trend charts
 
-## Dashboard Sheets
+## Files
 
-| Sheet | Purpose |
-| --- | --- |
-| `Raw_Data` | Timestamped sensor readings and light/fan states |
-| `Analytics` | Calculated summaries and analytical values |
-| `Dashboard` | KPIs and environmental sensor trends |
-
-The current workbook includes 209 readings and reports values such as temperature, humidity, LDR, and total readings.
-
-## Project Files
+<div align="center">
 
 | File | Description |
-| --- | --- |
-| `ESPconnection.py` | Tests and monitors the ESP8266 connection |
-| `esptoexcel.py` | Collects readings and appends them to `IoT_Analytics.xlsx` |
-| `IoT_Analytics.xlsx` | Excel workbook containing raw data and dashboard views |
-| `assets/dashboard-screenshot.png` | README preview for the interactive dashboard |
-| `LICENSE` | MIT license |
+|---|---|
+| `ESPconnection.py` | Tests the ESP8266 connection |
+| `esptoexcel.py` | Collects readings and updates the Excel workbook |
+| `IoT_Analytics.xlsx` | Raw data, analytics, and dashboard |
+| `webpreview.png` | Dashboard preview |
+
+</div>
 
 ## Requirements
 
-- Python 3.10 or newer
-- An ESP8266 device exposing sensor data over HTTP
-- Microsoft Excel or another workbook viewer
-- Python packages:
-
-```text
-requests
-openpyxl
-```
-
-## Installation
-
-Clone or download this repository, then install the dependencies:
+- Python 3.10+
+- ESP8266 device
+- `requests`
+- `openpyxl`
 
 ```powershell
 python -m pip install requests openpyxl
 ```
 
-## ESP8266 Configuration
+## Configuration
 
-The scripts expect the ESP8266 JSON endpoint at:
-
-```text
-http://192.168.0.228/data
-```
-
-Change `ESP_URL` in both Python scripts if the device has a different IP address:
+Set the ESP8266 endpoint in both Python scripts:
 
 ```python
-ESP_URL = "http://YOUR_ESP8266_IP/data"
+ESP_URL = "http://192.168.0.228/data"
 ```
 
-The endpoint should return JSON in this format:
+The endpoint should return:
 
 ```json
 {
@@ -89,51 +62,20 @@ The endpoint should return JSON in this format:
 
 ## Usage
 
-### Test the ESP8266 connection
+Test the connection:
 
 ```powershell
 python ESPconnection.py
 ```
 
-This script prints each reading every 3 seconds and reports connection or JSON errors.
-
-### Collect data into Excel
+Start data collection:
 
 ```powershell
 python esptoexcel.py
 ```
 
-The collector:
-
-1. Creates `IoT_Analytics.xlsx` if it does not exist.
-2. Requests sensor data from the ESP8266 every 5 seconds.
-3. Adds a timestamped row to `Raw_Data`.
-4. Expands the `IoT_Data` Excel table.
-5. Continues until stopped with `Ctrl+C`.
-
-> Close the workbook in Excel before starting the collector to avoid an Excel file-lock conflict.
-
-## Excel Dashboard
-
-Open `IoT_Analytics.xlsx` and select the `Dashboard` sheet. The dashboard uses the workbook data to show:
-
-- Current temperature
-- Current humidity
-- Current LDR value
-- Total readings
-- Environmental sensor trends
-
-The workbook can be refreshed and opened in Excel or viewed through the interactive OneDrive link above.
-
-## Troubleshooting
-
-| Problem | Resolution |
-| --- | --- |
-| `ESP8266 connection error` | Confirm that the ESP8266 is powered on and reachable on the configured IP address |
-| `Invalid JSON received` | Check the ESP8266 `/data` response and verify that it is valid JSON |
-| `Excel file is locked` | Close `IoT_Analytics.xlsx`, then restart the collector |
-| `IoT_Data table not found` | Restore or recreate the `IoT_Data` table in the `Raw_Data` sheet |
+Stop collection with `Ctrl+C`. Close `IoT_Analytics.xlsx` before starting the collector to avoid an Excel file-lock error.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+[MIT License](LICENSE)
