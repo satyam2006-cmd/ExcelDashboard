@@ -1,18 +1,10 @@
 # IoT Monitoring & Analytics Dashboard
 
-[![View Interactive Dashboard](webpreview.png)](https://1drv.ms/x/c/1cb72b16f52dc456/IQDjHFDnwslAQ4_fmDIWelybAUFZgOt10BkPU928jFPQuNU?e=rT7fKr)
+<div align="center">
+[![View Interactive Dashboard](webpreview.png)](https://1drv.ms/x/c/1cb72b16f52dc456/IQTjHFDnwslAQ4_fmDIWelybAagU6xWA45i9Tw6dXyC6ep4?em=2&wdAllowInteractivity=False&ActiveCell='Dashboard'!A1&wdHideGridlines=True&wdHideHeaders=True&wdInConfigurator=True)
+</div>
 
 An ESP8266-based IoT monitoring system that collects temperature, humidity, ambient light, and device states, stores the readings in Excel, and presents a real-time analytics dashboard.
-
-## Interactive Dashboard
-
-<iframe
-  width="402"
-  height="346"
-  frameborder="0"
-  scrolling="no"
-  src="https://1drv.ms/x/c/1cb72b16f52dc456/IQTjHFDnwslAQ4_fmDIWelybAagU6xWA45i9Tw6dXyC6ep4?em=2&amp;wdAllowInteractivity=False&amp;ActiveCell='Dashboard'!A1&amp;wdHideGridlines=True&amp;wdHideHeaders=True&amp;wdInConfigurator=True">
-</iframe>
 
 ## Features
 
