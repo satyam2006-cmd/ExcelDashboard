@@ -1,6 +1,7 @@
 # IoT Monitoring & Analytics Dashboard
 
 <div align="center">
+click to view dashboard :
 
 [![View Interactive Dashboard](webpreview.png)](https://1drv.ms/x/c/1cb72b16f52dc456/IQTjHFDnwslAQ4_fmDIWelybAagU6xWA45i9Tw6dXyC6ep4?em=2&wdAllowInteractivity=True&ActiveCell='Dashboard'!A1&wdHideGridlines=True&wdHideHeaders=True&wdInConfigurator=True)
 
