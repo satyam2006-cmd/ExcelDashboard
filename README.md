@@ -8,6 +8,9 @@ click to view dashboard :
 </div>
 
 An interactive analytics dashboard built using CSV data collected from ESP8266-based IoT sensors. It transforms raw sensor readings into meaningful visual insights through KPI summaries, temperature and humidity trends, ambient light analysis, device status distributions, and timestamp-based visualizations.
+The project focuses on data processing, analysis, and visualization to make IoT sensor data easier to explore and understand.Built during the IOFT Workshop.
+
+Built using Python, Excel, and IoT sensor datasets.
 
 ## Dashboard Features
 
