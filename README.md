@@ -1,4 +1,4 @@
-# IoT Monitoring & Analytics Dashboard
+# IoT Analytics Dashboard
 
 <div align="center">
 click to view dashboard :
@@ -7,7 +7,7 @@ click to view dashboard :
 
 </div>
 
-ESP8266 IoT monitoring project for collecting sensor readings and viewing them in an Excel analytics dashboard.
+An interactive analytics dashboard built using CSV data collected from ESP8266-based IoT sensors. It transforms raw sensor readings into meaningful visual insights through KPI summaries, temperature and humidity trends, ambient light analysis, device status distributions, and timestamp-based visualizations.
 
 ## Dashboard Features
 
